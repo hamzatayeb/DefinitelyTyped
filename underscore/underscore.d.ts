@@ -3874,6 +3874,20 @@ interface UnderscoreStatic {
 	**/
 	isUndefined(value: any): boolean;
 
+	/**
+	* Looks through each value in the object, returning the key of the first value that passes a truth
+	* test (iterator). The function returns as soon as it finds an acceptable element,
+	* and doesn't traverse the entire object.
+	* @param object Searches for a value in this object.
+	* @param iterator Search iterator function for each element in `object`.
+	* @param context `this` object in `iterator`, optional.
+	* @return The key of the first acceptable found element in `object`, if nothing is found -1 is returned.
+	**/
+	findKey<T>(
+		object: _.Dictionary<T>,
+		iterator: _.ObjectIterator<T, boolean>,
+		context?: any): string;
+
 	/* *********
 	 * Utility *
 	********** */
